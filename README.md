@@ -11,7 +11,7 @@
 
 ```
 cd docker/
-cp env-example .env
+cp .env.example .env
 ```
 
 ### 2-2. ビルドと起動
@@ -31,9 +31,12 @@ workコンテナで実行する
 
 `laravel new`
 
+srcにlaravel新規プロジェクトがマウントされる
+.env設定ファイルも作成される
+
 ### 3-1. Laravel設定ファイル
 
-`cp .env.example .env`
+src/.env を修正する
 
 ```
 DB_HOST=mysql
@@ -44,19 +47,6 @@ CACHE_DRIVER=redis
 REDIS_HOST=redis
 
 MAIL_DRIVER=log
-```
-
-### 3-2. composer install
-
-```
-composer dump-autoload
-composer install
-```
-
-### 3-3. マイグレーション
-
-```
-php artisan migrate
 ```
 
 ## 4. hosts設定と表示
