@@ -33,6 +33,9 @@ RUN set -xe; \
     # imagick
     && pecl install imagick \
     && docker-php-ext-enable imagick \
+    # exif
+    && docker-php-ext-install exif \
+    && docker-php-ext-enable exif \
     # enable mod_rewrite
     && a2enmod rewrite \
     # enable ssl
