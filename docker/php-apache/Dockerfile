@@ -25,7 +25,7 @@ RUN set -xe; \
       libonig-dev \
     && docker-php-ext-install bcmath gettext mbstring mysqli pdo pdo_mysql zip \
     && docker-php-ext-configure mbstring --disable-mbregex \
-    && docker-php-ext-configure zip --with-libzip \
+    && docker-php-ext-configure zip \
     # gd
     && docker-php-ext-install -j$(nproc) iconv \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
